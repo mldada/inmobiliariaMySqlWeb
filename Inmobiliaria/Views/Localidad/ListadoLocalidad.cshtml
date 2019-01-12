@@ -1,0 +1,22 @@
+﻿@model List<ENTIDAD.Localidad_E>
+
+@{
+    ViewBag.Title = "ListadoLocalidad";
+    Layout = "~/Views/Layout/_LayoutNavbar.cshtml";
+}
+
+<h2>Listado Localidad</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>LOCALIDAD</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Id_Localidad</td>
+        <td>@item.Dc_Localidad</td>
+    </tr>
+    }
+</table>

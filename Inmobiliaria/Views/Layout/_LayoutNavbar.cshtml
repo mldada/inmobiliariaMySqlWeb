@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - Inmobiliaria</title>
+
+    <link type="text/css" href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Scripts/jquery-3.0.0.min.js"></script>
+
+    <link href="~/Css/MenuLateral.css" rel="stylesheet" />
+    <script src="~/Js/MenuLateral.js"></script>
+
+
+</head>
+<body>
+
+
+    <div class="contenedor-menu">
+        <ul class="menu">
+            <li><a href="/Inmueble/Inicio"><i class="icono izquierda fa fa-home"></i>Inicio</a></li>
+            <li>
+                <a href="#"><i class="icono izquierda fa fa-bookmark"></i>Venta<i class="icono derecha fa fa-chevron-down"></i></a>
+                <ul>
+                    <li><a href="/Inmueble/VentaDepartamento">Departamento</a></li>
+                    <li><a href="/Inmueble/VentaCasaDuplex">Casa/Duplex</a></li>
+                    <li><a href="/Inmueble/VentaTipoCasa">Tipo Casa</a></li>
+                    <li><a href="/Inmueble/VentaLocalGalpon">Local/Galpon</a></li>
+                    <li><a href="/Inmueble/VentaLoteTerreno">Lote/Terreno</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="icono izquierda fa fa-bookmark"></i>Alquiler<i class="icono derecha fa fa-chevron-down"></i></a>
+                <ul>
+                    <li><a href="/Inmueble/AlquilerDepartamento">Departamento</a></li>
+                    <li><a href="/Inmueble/AlquilerCasaDuplex">Casa/Duplex</a></li>
+                    <li><a href="/Inmueble/AlquilerTipoCasa">Tipo Casa</a></li>
+                    <li><a href="/Inmueble/AlquilerLocalGalpon">Local/Galpon</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#"><i class="icono izquierda fa fa-edit"></i>Nuevo<i class="icono derecha fa fa-chevron-down"></i></a>
+                <ul>
+                    <li><a href="/Inmueble/AgregarVenta">Venta</a></li>
+                    <li><a href="/Inmueble/AgregarAlquiler">Alquiler</a></li>
+                </ul>
+            </li>
+            <li><a href="#"><i class="icono izquierda fa fa-bar-chart"></i>Reportes</a></li>
+        </ul>
+    </div>
+
+
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

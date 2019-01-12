@@ -1,0 +1,113 @@
+﻿@model ENTIDAD.Inmueble_E
+
+@{
+    ViewBag.Title = "EditarInmueble";
+    Layout = "~/Views/Layout/_LayoutNavbar.cshtml";
+
+    var listaTiposPropiedades = ViewBag.ListadoTiposPropiedades;
+    var listaLocalidades = ViewBag.ListadoLocalidades;
+    var listaEstados = ViewBag.ListadoEstados;
+}
+
+<h2>Editar Inmueble</h2>
+
+<table>
+    @using (Html.BeginForm("ActualizarInmueble", "Inmueble", FormMethod.Post))
+    {
+        <tr>
+            <td>ID: </td>
+            <td><input type="number" name="idInmueble" value="@Model.Id_Inmueble" /></td>
+        </tr>
+
+        <tr>  
+            <td><input type="hidden" name="esVenta" value="@Model.Es_Venta" /></td>
+        </tr>
+
+        <tr>
+            <td>DC_TIPO: </td>
+            <td>
+                <select name="cboTipoPropiedad">
+                    @foreach (var item in listaTiposPropiedades)
+                    {
+                        <option value="@item.Id_Tipo_Propiedad">@item.Dc_Tipo_Propiedad</option>
+                    }
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>IMPORTE: </td>
+            <td><input type="number" name="importe" value="@Model.Importe" /></td>
+        </tr>
+
+        <tr>
+            <td>SUPERICIE: </td>
+            <td><input type="number" name="superficie" value="@Model.Superficie" /></td>
+        </tr>
+
+        <tr>
+            <td>CALLE: </td>
+            <td><input type="text" name="calle" value="@Model.Calle" /></td>
+        </tr>
+
+        <tr>
+            <td>ALTURA: </td>
+            <td><input type="number" name="altura" value="@Model.Altura" /></td>
+        </tr>
+
+        <tr>
+            <td>DC_LOCALIDAD: </td>
+            <td>
+                <select name="cboLocalidad">
+                    @foreach (var item in listaLocalidades)
+                    {
+                        <option value="@item.Id_Localidad">@item.Dc_Localidad</option>
+                    }
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION: </td>
+            <td><input type="text" name="descripcion" value="@Model.Descripcion" /></td>
+        </tr>
+
+        <tr>
+            <td>DC_ESTADO: </td>
+            <td>
+                <select name="cboEstado">
+                    @foreach (var item in listaEstados)
+                    {
+                        <option value="@item.Id_Estado">@item.Dc_Estado</option>
+                    }
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>AMBIENTES: </td>
+            <td><input type="number" name="cantAmbientes" value="@Model.Cant_Ambientes" /></td>
+        </tr>
+
+        <tr>
+            <td>PISO: </td>
+            <td><input type="text" name="piso" value="@Model.Piso" /></td>
+        </tr>
+
+        <tr>
+            <td>DEPTO: </td>
+            <td><input type="text" name="depto" value="@Model.Depto" /></td>
+        </tr>
+
+        <tr>
+            <td>CREDITO: </td>
+            <td><input type="checkbox" name="aptoCredito" value="@Model.Apto_Credito"/></td>
+        </tr>
+
+        <tr>
+            <td><button type="submit" />Actualizar</td>
+        </tr>
+
+    }
+</table>
+

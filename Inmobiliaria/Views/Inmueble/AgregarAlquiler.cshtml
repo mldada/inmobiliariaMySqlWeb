@@ -1,0 +1,105 @@
+﻿@model ENTIDAD.Inmueble_E
+
+@{
+    ViewBag.Title = "AgregarInmueble";
+    Layout = "~/Views/Layout/_LayoutNavbar.cshtml";
+
+    var listaTiposPropiedades = ViewBag.ListadoTiposPropiedades;
+    var listaLocalidades = ViewBag.ListadoLocalidades;
+}
+
+<h2>Nuevo Alquiler</h2>
+
+<table>
+    @using (Html.BeginForm("InsertarInmueble", "Inmueble", FormMethod.Post))
+    {
+        <tr>
+            <td>DC_TIPO: </td>
+            <td>
+                <select name="cboTipoPropiedad">
+                    @foreach (var item in listaTiposPropiedades)
+                    {
+                        <option value="@item.Id_Tipo_Propiedad">@item.Dc_Tipo_Propiedad</option>
+                    }
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>IMPORTE: </td>
+            <td><input type="number" name="importe" /></td>
+        </tr>
+
+        <tr>
+            <td>SUPERICIE: </td>
+            <td><input type="number" name="superficie" /></td>
+        </tr>
+
+        <tr>
+            <td>CALLE: </td>
+            <td><input type="text" name="calle" /></td>
+        </tr>
+
+        <tr>
+            <td>ALTURA: </td>
+            <td><input type="number" name="altura" /></td>
+        </tr>
+
+        <tr>
+            <td>DC_LOCALIDAD: </td>
+            <td>
+                <select name="cboLocalidad">
+                    @foreach (var item in listaLocalidades)
+                    {
+                        <option value="@item.Id_Localidad">@item.Dc_Localidad</option>
+                    }
+                </select>
+            </td>
+        </tr>
+
+        <!--
+                <tr>
+                    <td><input type="hidden" name="estado" value="@ENTIDAD.TipoPropiedad_E.TipoOperacion.Alquiler" /></td>
+                </tr>
+        -->
+
+        <tr>
+            <td><input type="hidden" name="esVenta" value="false" /></td>
+        </tr>
+
+        <tr>
+            <td>DESCRIPCION: </td>
+            <td><input type="text" name="descripcion" /></td>
+        </tr>
+        <!--
+                <tr>
+                    <td><input type="hidden" name="estado" value="@ENTIDAD.Estado_E.Estado.Publicado" /></td>
+                </tr>
+        -->
+
+        <tr>
+            <td><input type="hidden" name="estado" value="1" /></td>
+        </tr>
+
+        <tr>
+            <td>AMBIENTES: </td>
+            <td><input type="number" name="cantAmbientes" /></td>
+        </tr>
+
+        <tr>
+            <td>PISO: </td>
+            <td><input type="text" name="piso" /></td>
+        </tr>
+
+        <tr>
+            <td>DEPTO: </td>
+            <td><input type="text" name="depto" /></td>
+        </tr>
+
+        <tr>
+            <td><button type="submit" />Agregar</td>
+        </tr>
+
+    }
+</table>
+

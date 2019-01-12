@@ -1,0 +1,45 @@
+﻿@model List<ENTIDAD.Inmueble_E>
+
+@{
+    ViewBag.Title = "VentaTipoCasa";
+    Layout = "~/Views/Layout/_LayoutNavbar.cshtml";
+}
+
+<h2>Venta Tipo Casa</h2>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>SUPERFICIE</th>
+        <th>AMBIENES</th>
+        <th>PISO</th>
+        <th>DEPTO</th>
+        <th>CALLE</th>
+        <th>ALTURA</th>
+        <th>DC_LOCALIDAD</th>
+        <th>DESCRIPCION</th>
+        <th>IMPORTE</th>
+        <th>CREDITO</th>
+        <th>DC_ESTADO</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.Id_Inmueble</td>
+        <td>@item.Superficie</td>
+        <td>@item.Cant_Ambientes</td>
+        <td>@item.Piso</td>
+        <td>@item.Depto</td>
+        <td>@item.Calle</td>
+        <td>@item.Altura</td>
+        <td>@item.localidad_E.Dc_Localidad</td>
+        <td>@item.Descripcion</td>
+        <td>@item.Importe</td>
+        <td>@item.Apto_Credito</td>
+        <td>@item.estado_E.Dc_Estado</td>
+        <td>@Html.ActionLink("ACTUALIZAR", "EditarVenta", new { idInmueble = item.Id_Inmueble })</td>
+        <td>@Html.ActionLink("ELIMINAR", "EliminarInmueble", new { idInmueble = item.Id_Inmueble })</td>
+    </tr>
+    }
+</table>
+
